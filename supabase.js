@@ -5,3 +5,53 @@ const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYm
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export default supabase;
+
+
+let { data: Nutzer zu Anbieter, error } = await supabase
+  .from('Nutzer zu Anbieter')
+  .select('id')
+
+  
+let { data: Nutzer zu Anbieter, error } = await supabase
+.from('Nutzer zu Anbieter')
+.select('nutzer_id')
+
+
+let { data: Nutzer zu Anbieter, error } = await supabase
+  .from('Nutzer zu Anbieter')
+  .select('anbieter_id')
+
+  
+let { data: Nutzer zu Anbieter, error } = await supabase
+.from('Nutzer zu Anbieter')
+.select('besuchsdatum')
+
+
+let { data: Nutzer zu Anbieter, error } = await supabase
+  .from('Nutzer zu Anbieter')
+  .select('*')
+
+  
+let { data: Nutzer zu Anbieter, error } = await supabase
+.from('Nutzer zu Anbieter')
+.select('some_column,other_column')
+
+
+let { data: Nutzer zu Anbieter, error } = await supabase
+  .from('Nutzer zu Anbieter')
+  .select(`
+    some_column,
+    other_table (
+      foreign_key
+    )
+  `)
+
+  
+let { data: Nutzer zu Anbieter, error } = await supabase
+.from('Nutzer zu Anbieter')
+.select('*')
+.range(0, 9)
+
+
+
+
