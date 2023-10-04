@@ -10,3 +10,43 @@ border-style: none;
 font-family: raleway;
 font-size: 20px;
 }
+
+.hintergrundbild {
+    width: 425px;
+    height: 855px;
+    flex-shrink: 0;
+    background: lightgray 50% / cover no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-image: url(img/hintergrund\ neu.jpg);
+}
+
+
+h1 {
+    top: 66px;
+    left: 13px;
+    width: 363px;
+    height: 165px;
+    overflow: hidden;
+    font-family: Longhaul;
+    font-size: 40px;
+    text-align: center;
+    color:#EAEAEA;
+}
+
+.input_field {
+    display: inline-flex;
+    padding: 25px 70px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    border-radius: 50px;
+    background: #D1DED2;
+    margin: auto;
+    display: flex;
+}
+
+.text_input {
+    font-family: raleway;
+    font-size: 15px;
+}
