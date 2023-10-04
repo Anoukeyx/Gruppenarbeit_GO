@@ -1,0 +1,12 @@
+button {
+    display: inline-flex;
+padding: 15px 60px;
+justify-content: center;
+align-items: center;
+gap: 40px;
+border-radius: 50px;
+background: #D1DED2;
+border-style: none;
+font-family: raleway;
+font-size: 20px;
+}
