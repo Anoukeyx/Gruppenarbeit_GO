@@ -1,5 +1,10 @@
-button {
-    display: inline-flex;
+
+
+
+.weiterbutton {
+    display: flex;
+    margin-left:65%;
+    margin-top: 5%;
 padding: 15px 60px;
 justify-content: center;
 align-items: center;
@@ -14,17 +19,15 @@ font-size: 20px;
 .hintergrundbild {
     width: 425px;
     height: 855px;
-    flex-shrink: 0;
-    background: lightgray 50% / cover no-repeat;
+    background: no-repeat;
     background-size: cover;
     background-position: center top;
-    background-image: url(img/hintergrund\ neu.jpg);
 }
 
 
 h1 {
-    top: 66px;
-    left: 13px;
+    top: 20px;
+    margin-left: 50%;
     width: 363px;
     height: 165px;
     overflow: hidden;
@@ -34,19 +37,21 @@ h1 {
     color:#EAEAEA;
 }
 
-.input_field {
-    display: inline-flex;
+.input_container {
+    display: flex;
     padding: 25px 70px;
     justify-content: center;
-    align-items: center;
-    gap: 40px;
-    border-radius: 50px;
-    background: #D1DED2;
-    margin: auto;
-    display: flex;
-}
-
-.text_input {
+    border-radius: 20px;
+    background: #A9CBAD;
+    border-style: none;
+    margin-left: 60%;
+    margin-top: 80%;
     font-family: raleway;
     font-size: 15px;
+    width: 100px;
+    
+    
 }
+
+
+
