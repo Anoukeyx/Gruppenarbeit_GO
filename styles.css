@@ -24,6 +24,7 @@ h1 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #Logo {
     width: 600px;     
     height: auto;       
@@ -36,6 +37,9 @@ h1 {
     width: 600px; 
 =======
 .emailInput {
+=======
+#emailInput {
+>>>>>>> 49fdf1b60b4e2a8f889b6aaf7dc7729c55e21399
     width: 520px; 
 >>>>>>> 73546dc62221604812ba9d7cf48550675dc9a75c
     height: 120px; 
