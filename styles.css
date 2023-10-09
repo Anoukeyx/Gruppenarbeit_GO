@@ -23,6 +23,7 @@ h1 {
     padding-top: 180px;
 }
 
+<<<<<<< HEAD
 #Logo {
     width: 600px;     
     height: auto;       
@@ -33,6 +34,10 @@ h1 {
 
 #emailInput {
     width: 600px; 
+=======
+.emailInput {
+    width: 520px; 
+>>>>>>> 73546dc62221604812ba9d7cf48550675dc9a75c
     height: 120px; 
     border-radius: 20px; 
     border-style: none;
@@ -45,7 +50,7 @@ h1 {
     font-family: "rale";
 }
 
-button {
+.weiterbutton {
     display: inline-flex;
     padding: 20px 80px;
     border-radius: 50px;
@@ -59,7 +64,7 @@ button {
     transform: translateX(-50%); 
 }
 
-button:hover {
+.weiterbutton:hover {
     background-color: #a1ada3;
     color: #D1DED2;
    
