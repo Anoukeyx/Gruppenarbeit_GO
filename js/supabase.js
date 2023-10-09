@@ -1,57 +1,59 @@
-import { createClient } from '@supabase/supabase-js'
+import { supa } from "../../00_setup/supabase.js";
 
-const supabaseUrl = 'https://jcgdfenxejumvmejngdx.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpjZ2RmZW54ZWp1bXZtZWpuZ2R4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYzMzE4OTEsImV4cCI6MjAxMTkwNzg5MX0.RsfAAg8PMNJ5TM_VLd4SUimRF-ZvPGzwPJasfm3-adI';
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+console.log(window.location.origin);
 
-export default supabase;
+// Funktion, um Magic Link zu senden
+async function sendMagicLink() {
+    const email = document.getElementById('emailInput').value;
+    const { error } = await supa.auth.signIn({ email });
+    
+    if (error) {
 
+        console.error("Error sending magic link: ", error.message);
+    } else {
+        console.log("Magic link sent to ", email);
+    }
+}
 
-let { data: Nutzer zu Anbieter, error } = await supabase
-  .from('Nutzer zu Anbieter')
-  .select('id')
-
+// Funktion, um User Status zu aktualisieren
+function updateUserStatus(user) {
+  const userStatusElement = document.getElementById('userStatus');
   
-let { data: Nutzer zu Anbieter, error } = await supabase
-.from('Nutzer zu Anbieter')
-.select('nutzer_id')
+  if (user) {
+      userStatusElement.textContent = `Authenticated as: ${user.email}`;
+  } else {
+      userStatusElement.textContent = "Not authenticated.";
+  }
+}
 
+// Prüfe und zeige den initialen User Status an
+const initialUser = supa.auth.user();
+updateUserStatus(initialUser);
 
-let { data: Nutzer zu Anbieter, error } = await supabase
-  .from('Nutzer zu Anbieter')
-  .select('anbieter_id')
+// Eventlistener für Magic Link Button
+document.getElementById('sendMagicLinkButton').addEventListener('click', sendMagicLink);
 
-  
-let { data: Nutzer zu Anbieter, error } = await supabase
-.from('Nutzer zu Anbieter')
-.select('besuchsdatum')
+// Listener, für Änderungen des Auth Status
+// UserStatus wird aktualisiert, wenn sich der Auth Status ändert
+supa.auth.onAuthStateChange((event, session) => {
+  if (event === "SIGNED_IN") {
+      console.log("User signed in: ", session.user);
+      updateUserStatus(session.user);
+  } else if (event === "SIGNED_OUT") {
+      console.log("User signed out");
+      updateUserStatus(null);
+  }
+});
 
+// 3. Logout Logik
+async function logout() {
+  const { error } = await supa.auth.signOut();
+  if (error) {
+      console.error("Error during logout:", error);
+  } else {
+      updateUserStatus(null);
+      console.log("User logged out successfully.");
+  }
+}
 
-let { data: Nutzer zu Anbieter, error } = await supabase
-  .from('Nutzer zu Anbieter')
-  .select('*')
-
-  
-let { data: Nutzer zu Anbieter, error } = await supabase
-.from('Nutzer zu Anbieter')
-.select('some_column,other_column')
-
-
-let { data: Nutzer zu Anbieter, error } = await supabase
-  .from('Nutzer zu Anbieter')
-  .select(`
-    some_column,
-    other_table (
-      foreign_key
-    )
-  `)
-
-  
-let { data: Nutzer zu Anbieter, error } = await supabase
-.from('Nutzer zu Anbieter')
-.select('*')
-.range(0, 9)
-
-
-
-
+document.getElementById('logoutButton').addEventListener('click', logout);
