@@ -1,4 +1,4 @@
-/*import { supa } from "../00_setup/supabase.js";
+import { supa } from "../00_setup/supabase.js";
 
 console.log("00 JavaScript verbunden")
 
@@ -9,4 +9,4 @@ async function selectAllPersons() {
     return data;
   }
 
-console.log('Alle Personen in der DB: ', selectAllPersons);*/
+console.log('Alle Personen in der DB: ', selectAllPersons);

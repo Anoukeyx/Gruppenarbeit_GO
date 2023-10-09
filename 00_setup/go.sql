@@ -1,4 +1,4 @@
-/*-- Create the directors table
+-- Create the directors table
 CREATE TABLE Person (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE Rolle (
     release_date DATE,
     genre VARCHAR(50),
     rating VARCHAR(5) 
-); */
+); 
 
 -- Insert Persons
 INSERT INTO Person (first_name, last_name, birth_date, email_adress, telefon, birth_date, Rolle_id, firma, hash_code)
