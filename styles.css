@@ -5,9 +5,13 @@ body {
     background-attachment: fixed;
 }
 
+@font-face {
+    font-family: "longi";
+    src: url('fonts/Longhaul.ttf') format('truetype');
+}
 
 h1 {
-    font-family: lh;
+    font-family: "longi";
     font-size: 100px;
     text-align: center;
     color:#EAEAEA;
