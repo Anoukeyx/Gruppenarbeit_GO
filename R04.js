@@ -1,6 +1,6 @@
  import { supa } from "../../../00_setup/supabase.js";
  
-const btn = document.querySelector('#send');
+const btn = document.querySelector('#registrieren');
 btn.addEventListener('click', insertPerson);
 
 async function insertPerson() {
