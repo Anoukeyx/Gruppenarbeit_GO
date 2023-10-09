@@ -5,19 +5,6 @@ body {
     background-attachment: fixed;
 }
 
-button {
-    display: inline-flex;
-    padding: 20px 80px;
-    border-radius: 50px;
-    background: #D1DED2;
-    border-style: none;
-    font-family: raleway;
-    font-size: 60px;
-    position: absolute;
-    left: 50%;     
-    bottom: 120px;   
-    transform: translateX(-50%); 
-}
 
 h1 {
     font-family: lh;
@@ -38,4 +25,25 @@ h1 {
     margin: 10px auto;
     margin-top: 1200px; 
     background-color: #fff; 
+}
+
+button {
+    display: inline-flex;
+    padding: 20px 80px;
+    border-radius: 50px;
+    background: #D1DED2;
+    border-style: none;
+    font-family: raleway;
+    font-size: 60px;
+    position: absolute;
+    left: 50%;     
+    bottom: 120px;   
+    transform: translateX(-50%); 
+}
+
+button:hover {
+    background-color: #a1ada3;
+    color: #D1DED2;
+
+
 }
