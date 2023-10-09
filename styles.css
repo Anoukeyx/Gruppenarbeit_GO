@@ -23,7 +23,7 @@ h1 {
     padding-top: 180px;
 }
 
-#emailInput {
+.emailInput {
     width: 520px; 
     height: 120px; 
     border-radius: 20px; 
@@ -36,7 +36,7 @@ h1 {
     background-color: #fff; 
 }
 
-button {
+.weiterbutton {
     display: inline-flex;
     padding: 20px 80px;
     border-radius: 50px;
@@ -50,7 +50,7 @@ button {
     transform: translateX(-50%); 
 }
 
-button:hover {
+.weiterbutton:hover {
     background-color: #a1ada3;
     color: #D1DED2;
    
