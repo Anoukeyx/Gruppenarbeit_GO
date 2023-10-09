@@ -9,7 +9,6 @@
     display: flex;      /* Flexbox hinzufügen, um die Kinderelemente leichter zu positionieren */
     flex-direction: column;  /* Standardrichtung */
     align-items: center;     /* Zentriert Inhalte horizontal */
-    justify-content: center; /* Zentriert Inhalte vertikal */
 }
 
 .blurr-app-container {
@@ -23,7 +22,6 @@
     display: flex;      /* Flexbox hinzufügen, um die Kinderelemente leichter zu positionieren */
     flex-direction: column;  /* Standardrichtung */
     align-items: center;     /* Zentriert Inhalte horizontal */
-  
 }
 
 @font-face {
@@ -42,7 +40,7 @@ h1 {
     text-align: center;
     color:#EAEAEA;
     display: flex;
-    margin: 20px auto;
+    margin: 250px auto;
 
 }
 
@@ -51,11 +49,10 @@ h1 {
     height: auto;       
     margin: auto;
     display: flex;
-    margin-top: 200px;
+    margin-top: 10px;
 }
 
 .emailInput, .password {
-    width: 600px; 
     width: 520px; 
     height: 120px; 
     border-radius: 20px; 
@@ -65,7 +62,10 @@ h1 {
     background-color: #a1ada3; 
     font-family: "rale";
     margin-bottom: 300px;
+}
 
+.password {
+    margin-top: 1000px;
 }
 
 .weiterbutton, .registrieren {
