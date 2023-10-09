@@ -14,19 +14,45 @@
     <div class="blurr-app-container">
         <h1>
             BENUTZERDATEN
-        </h1> 
-            
+        </h1>
                 <div id="benutzerdaten">
                     <div class="wrapper_benutzerdaten">
-            
-                            <div id="vorname"><input class="benutzerdaten" type="text" placeholder="Vorname"></div>
-                            <div id="nachname"><input class="benutzerdaten" type="text" placeholder="Nachname"></div>
-                            <div id="geburtstag"><input class="benutzerdaten" type="text" placeholder="geburtstag"></div>
-                            <div id="bild"><input class="benutzerdaten" type="text" placeholder="bild"></div>
-                            <div id="email_adresse"><input class="benutzerdaten" type="text" placeholder="E-Mail Adresse"></div>
-                            <div id="telefon_nummer"><input class="benutzerdaten" type="text" placeholder="Telefon Nummer"></div>
+                        <div id="anrede">
+                            <select class="anrede">
+                                <option value="frau">Anrede</option>
+                                <option value="frau">Frau</option>
+                                <option value="herr">Herr</option>
+                                <option value="andere">Andere</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="first_name">Vorname</label>
+                            <input type="text" id="first_name" class="benutzerdaten" placeholder="Vorname">
+                        </div>
+                        <div>
+                            <label for="last_name">Nachname</label>
+                            <input type="text" id="last_name" class="benutzerdaten" placeholder="Nachname">
+                        </div>
+                        <div>
+                            <label for="birth_date">Geburtsdatum</label>
+                            <input type="date" id="birth_date" class="benutzerdaten" placeholder="Geburtsdatum">
+                        </div>
+                        <div>
+                            <label for="email_adress">E-Mail Adresse</label>
+                            <input type="email" id="email_adress" class="benutzerdaten" placeholder="E-Mail Adresse">
+                        </div>
+                        <div>
+                            <label for="telefon">Telefon Nummer</label>
+                            <input type="text" id="telefon" class="benutzerdaten" placeholder="Telefon Nummer">
+                        </div>
                     </div>
                 </div>
+        
+                <button class="registrieren" id="send" type="button">registrieren</button>
+                <script src="../../../00_setup/supabase.js" type="module"></script>
+                <script src="insert_by_input.js" type="module"></script>
+            </div>
+        
 
         <button class="registrieren" type="submit">registrieren</button>
         <script type="module" src="../../../00_setup/supabase.js"></script>
