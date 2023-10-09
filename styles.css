@@ -23,17 +23,26 @@ h1 {
     padding-top: 180px;
 }
 
+#Logo {
+    width: 600px;     
+    height: auto;       
+    margin: auto;
+    display: flex;
+    margin-top: 250px;
+}
+
 #emailInput {
-    width: 520px; 
+    width: 600px; 
     height: 120px; 
     border-radius: 20px; 
-    border: 3px solid #D1DED2; 
+    border-style: none;
     padding-left: 20px; 
     font-size: 40px; 
     display: block; 
     margin: 10px auto;
-    margin-top: 1200px; 
-    background-color: #fff; 
+    margin-top: 400px; 
+    background-color: #a1ada3; 
+    font-family: "rale";
 }
 
 button {
