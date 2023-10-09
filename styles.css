@@ -23,7 +23,7 @@
     display: flex;      /* Flexbox hinzufügen, um die Kinderelemente leichter zu positionieren */
     flex-direction: column;  /* Standardrichtung */
     align-items: center;     /* Zentriert Inhalte horizontal */
-    justify-content: center; /* Zentriert Inhalte vertikal */
+  
 }
 
 @font-face {
@@ -41,6 +41,8 @@ h1 {
     font-size: 100px;
     text-align: center;
     color:#EAEAEA;
+    display: flex;
+    margin: 20px auto;
 
 }
 
