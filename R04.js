@@ -1,4 +1,4 @@
- import { supa } from "../../../00_setup/supabase.js";
+ import { supa } from "supabase.js";
  
 const btn = document.querySelector('#registrieren');
 btn.addEventListener('click', insertPerson);
@@ -8,10 +8,12 @@ async function insertPerson() {
     const { data, error } = await supa.from("Person").insert([
       {
         first_name: first_name.value, 
-        last_name: 'Atkinson', 
-         birth_date: '1955-01-06', 
-        telefon:'+41 78 892 48 09',
-        email_adress: 'haltdiefresse@danke.com',
+        last_name: last_name_name.value, 
+        birth_date: birth_date.value, 
+        telefon:telefon.value,
+        email_adress: email_adress.value,
+        profile_picture: profile_picture.value,
+
       }
     ]);
     // In reality, all fields (first_name, last_name, birth_date and nationality) would be inserted via input field.
