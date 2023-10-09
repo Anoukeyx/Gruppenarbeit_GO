@@ -23,7 +23,7 @@ h1 {
     padding-top: 180px;
 }
 
-.emailInput {
+#emailInput {
     width: 520px; 
     height: 120px; 
     border-radius: 20px; 
