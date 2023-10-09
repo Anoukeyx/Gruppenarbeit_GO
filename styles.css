@@ -10,6 +10,11 @@ body {
     src: url('fonts/Longhaul.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: "rale";
+    src: url('fonts/Raleway-Regular.ttf') format('truetype');
+}
+
 h1 {
     font-family: "longi";
     font-size: 100px;
@@ -37,7 +42,7 @@ button {
     border-radius: 50px;
     background: #D1DED2;
     border-style: none;
-    font-family: raleway;
+    font-family: "rale";
     font-size: 60px;
     position: absolute;
     left: 50%;     
