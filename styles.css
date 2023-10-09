@@ -1,8 +1,29 @@
-body {
-    margin: 0; 
-    background-image: url('img/hintergrund\ neu.jpg'); 
-    background-size: cover; 
-    background-attachment: fixed;
+.app-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('img/hintergrund_ohne_kletterer.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Eventuell weitere Stildefinitionen hinzufügen, je nach Bedarf */
+    display: flex;      /* Flexbox hinzufügen, um die Kinderelemente leichter zu positionieren */
+    flex-direction: column;  /* Standardrichtung */
+    align-items: center;     /* Zentriert Inhalte horizontal */
+    justify-content: center; /* Zentriert Inhalte vertikal */
+}
+
+.blurr-app-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('img/hintergrund_blurry_gruen.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Eventuell weitere Stildefinitionen hinzufügen, je nach Bedarf */
+    display: flex;      /* Flexbox hinzufügen, um die Kinderelemente leichter zu positionieren */
+    flex-direction: column;  /* Standardrichtung */
+    align-items: center;     /* Zentriert Inhalte horizontal */
+    justify-content: center; /* Zentriert Inhalte vertikal */
 }
 
 @font-face {
@@ -20,7 +41,7 @@ h1 {
     font-size: 100px;
     text-align: center;
     color:#EAEAEA;
-    padding-top: 180px;
+
 }
 
 #Logo {
@@ -28,10 +49,10 @@ h1 {
     height: auto;       
     margin: auto;
     display: flex;
-    margin-top: 250px;
+    margin-top: 200px;
 }
 
-.emailInput {
+.emailInput, .password {
     width: 600px; 
     width: 520px; 
     height: 120px; 
@@ -39,14 +60,13 @@ h1 {
     border-style: none;
     padding-left: 20px; 
     font-size: 40px; 
-    display: block; 
-    margin: 10px auto;
-    margin-top: 400px; 
     background-color: #a1ada3; 
     font-family: "rale";
+    margin-bottom: 300px;
+
 }
 
-.weiterbutton {
+.weiterbutton, .registrieren {
     display: inline-flex;
     padding: 20px 80px;
     border-radius: 50px;
