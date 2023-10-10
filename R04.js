@@ -1,4 +1,4 @@
- import { supa } from "supabase.js";
+ import { supa } from "./supabase.js";
  
 const btn = document.querySelector('#registrieren');
 btn.addEventListener('click', insertPerson);
@@ -8,7 +8,7 @@ async function insertPerson() {
     const { data, error } = await supa.from("Person").insert([
       {
         first_name: first_name.value, 
-        last_name: last_name_name.value, 
+        last_name: last_name.value, 
         birth_date: birth_date.value, 
         telefon:telefon.value,
         email_adress: email_adress.value,

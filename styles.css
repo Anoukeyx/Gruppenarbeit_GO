@@ -88,6 +88,11 @@ h1 {
     color: #D1DED2;
 }
 
+.registrieren:hover {
+    background-color: #a1ada3;
+    color: #D1DED2;
+}
+
 /*_______________________Benutzerdaten START______________________________________________*/
 
 .wrapper_benutzerdaten {
