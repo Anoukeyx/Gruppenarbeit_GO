@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     // Funktion, um User Status zu aktualisieren
     function updateUserStatus(user) {
-        const userStatusElement = document.getElementById('userStatus');
+        const userStatusElement = document.getElementById('rootCheck');
         
         if (user) {
             userStatusElement.textContent = `Authenticated as: ${user.email}`;
@@ -29,8 +29,14 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Prüfe und zeige den initialen User Status an
-   /* const initialUser = supa.auth.user();
-    updateUserStatus(initialUser);*/
+//chat gpt hinzugefügt
+    async function initializeApp() {
+
+    const initialUser = supa.auth.user();
+    updateUserStatus(initialUser);
+    
+//chat gpt hinzugefügt
+    window.addEventListener('DOMContentLoaded', initializeApp); 
 
     // Eventlistener für Magic Link Button
     document.querySelector('.weiterbutton').addEventListener('click', sendMagicLink);
@@ -45,7 +51,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             console.log("User signed out");
             updateUserStatus(null);
         }
-    });
+    })};
 
     // 3. Logout Logik
     async function logout() {

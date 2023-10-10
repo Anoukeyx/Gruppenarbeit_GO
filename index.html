@@ -17,20 +17,22 @@
         </form>
         <button class="weiterbutton" type="submit">weiter</button>
 
-        <p id="rootCheck">Checking authentication status...</p>
+        <p id="rootCheck">Checking authentication status...</p> 
 
+<!--userStatus zu rootCheck-->
 
         <button id="logoutButton">Logout</button>
     
-       
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest/dist/umd/supabase.min.js"></script>
+        <script type="module" src="supabase.js"></script>
+        <script type="module" src="js/magiclink.js"></script>
     
         <script>
     
             // script prüft, ob wir uns auf der root des servers befinden
     
             window.addEventListener('DOMContentLoaded', (event) => {
-                const rootCheckElem = document.getElementById('rootCheck');
-        
+                const rootCheckElem = document.getElementById('rootCheck'); 
                 if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
                     rootCheckElem.textContent = "You are on the root of the server.";
                     rootCheckElem.style.display = "none"; // Hide it if you don't want any message on the root
@@ -42,9 +44,7 @@
     
         
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest/dist/umd/supabase.min.js"></script>
-    <script type="module" src="supabase.js"></script>
-    <script type="module" src="js/magiclink.js"></script>
+    
 </body>
 
 
