@@ -31,24 +31,26 @@ function readPersonStatus(user) {
   if (Person) {
       if (Person.Rolle_id === 'anbieter') {
           PersonStatusElement.textContent = `Authenticated as Anbieter: ${Person.email}`;
-          page = "../html/B01.html";
+          window.location.href = "../html/B01.html"
       } else if (Person.Rolle_id === 'nutzer') {
-          // Hier prüfen wir das Ablaufdatum des Abos
+          
           const currentDate = new Date();
-          const aboEndDate = new Date(Person.aboEnde);
+          const aboEndDate = new Date(Person.regtime);
+          aboEndDate.setFullYear(aboEndDate.getFullYear() + 1);
 
           if (aboEndDate >= currentDate) {
             PersonStatusElement.textContent = `Authenticated as Nutzer (Abo gültig): ${Person.email}`;
-            page = "../html/B02.html";
+            window.location.href = "../html/B02.html"
           } else {
             PersonStatusElement.textContent = `Authenticated as Nutzer (Abo abgelaufen): ${Person.email}`;
-            page = "../html/E01.html";
+            window.location.href = "../html/E01.html"
           }
       } else {
         PersonStatusElement.textContent = `Authenticated as: ${Person.email} (Unbekannte Rolle)`;
       }
   } else {
     PersonStatusElement.textContent = "Not authenticated.";
+    window.location.href = "../html/index.html"
   }
 }
 
