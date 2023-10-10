@@ -2,6 +2,8 @@
 
 <head> 
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
 </head>
 
 <body>
@@ -12,35 +14,20 @@
 
         <img src="img/Logo_IM_blau.png" alt="GO_Logo" id="Logo">
     
-        <form action="/path-zu-ihrer-verarbeitungsseite" method="post">
-            <input type="email" class="emailInput" name="user_email" placeholder="Email Adresse eingeben">
+        <form>
+            <input type="email" class="emailInput" id="emailInput" name="user_email" placeholder="Email Adresse eingeben">
         </form>
-        <button class="weiterbutton" type="submit">weiter</button>
+        <button class="weiterbutton" id="submit" type="submit">weiter</button>
 
-        <p id="rootCheck">Checking authentication status...</p> 
+        <p id="userStatus">Checking authentication status...</p>
 
 <!--userStatus zu rootCheck-->
 
         <button id="logoutButton">Logout</button>
-    
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest/dist/umd/supabase.min.js"></script>
+
         <script type="module" src="supabase.js"></script>
         <script type="module" src="js/magiclink.js"></script>
     
-        <script>
-    
-            // script prüft, ob wir uns auf der root des servers befinden
-    
-            window.addEventListener('DOMContentLoaded', (event) => {
-                const rootCheckElem = document.getElementById('rootCheck'); 
-                if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
-                    rootCheckElem.textContent = "You are on the root of the server.";
-                    rootCheckElem.style.display = "none"; // Hide it if you don't want any message on the root
-                } else {
-                    rootCheckElem.innerHTML = 'Authentication funktioniert nur auf der Root des Servers! Das ist nicht hier, sondern <a href="/"> da </a>';
-                }
-            });
-        </script>
     
         
     </div>
