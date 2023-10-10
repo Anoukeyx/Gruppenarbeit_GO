@@ -1,7 +1,7 @@
 .app-container {
     width: 100vw;
     height: 100vh;
-    background-image: url('img/hintergrund_ohne_kletterer.jpg');
+    background-image: url('../img/hintergrund_ohne_kletterer.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,7 +14,7 @@
 .blurr-app-container {
     width: 100vw;
     height: 100vh;
-    background-image: url('img/hintergrund_blurry_gruen.jpg');
+    background-image: url('../img/hintergrund_blurry_gruen.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,12 +26,12 @@
 
 @font-face {
     font-family: "longi";
-    src: url('fonts/Longhaul.ttf') format('truetype');
+    src: url('../fonts/Longhaul.ttf') format('truetype');
 }
 
 @font-face {
     font-family: "rale";
-    src: url('fonts/Raleway-Regular.ttf') format('truetype');
+    src: url('../fonts/Raleway-Regular.ttf') format('truetype');
 }
 
 h1 {
