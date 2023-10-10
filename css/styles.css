@@ -95,7 +95,7 @@ h1 {
 
 /*_______________________Benutzerdaten START______________________________________________*/
 
-.wrapper_benutzerdaten {
+/*.wrapper_benutzerdaten {
     display: grid;
     grid-row-gap: 5px;
     grid-column-gap: 5px;
@@ -126,7 +126,7 @@ h1 {
     }    
     #telefon_nummer {
     grid-area: 6 / 1 / 7 / 3;
-    }
+    }*/
 
     .anrede, .benutzerdaten, .angaben_zahlung, .auswahl_zahlung{
         width: 100%;

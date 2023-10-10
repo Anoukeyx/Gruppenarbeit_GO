@@ -23,5 +23,33 @@ async function insertPerson() {
     }
   }
 
+/*--------------------------ENTSCHEIDUNG NUTZER ODER ANBIETER UND ABLAUFDATUM START----------------------------*/
 
-  
+function readPersonStatus(user) {
+  const PersonStatusElement = document.getElementById('PersonStatus');
+
+  if (Person) {
+      if (Person.Rolle_id === 'anbieter') {
+          PersonStatusElement.textContent = `Authenticated as Anbieter: ${Person.email}`;
+          page = "../html/B01.html";
+      } else if (Person.Rolle_id === 'nutzer') {
+          // Hier prüfen wir das Ablaufdatum des Abos
+          const currentDate = new Date();
+          const aboEndDate = new Date(Person.aboEnde);
+
+          if (aboEndDate >= currentDate) {
+            PersonStatusElement.textContent = `Authenticated as Nutzer (Abo gültig): ${Person.email}`;
+            page = "../html/B02.html";
+          } else {
+            PersonStatusElement.textContent = `Authenticated as Nutzer (Abo abgelaufen): ${Person.email}`;
+            page = "../html/E01.html";
+          }
+      } else {
+        PersonStatusElement.textContent = `Authenticated as: ${Person.email} (Unbekannte Rolle)`;
+      }
+  } else {
+    PersonStatusElement.textContent = "Not authenticated.";
+  }
+}
+
+/*--------------------------ENTSCHEIDUNG NUTZER ODER ANBIETER UND ABLAUFDATUM ENDE----------------------------*/
