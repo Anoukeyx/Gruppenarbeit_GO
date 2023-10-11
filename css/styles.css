@@ -68,7 +68,7 @@ h1 {
     margin-top: 1000px;
 }
 
-.weiterbutton, .registrieren {
+.weiterbutton, .registrieren, .erneuern, .löschen {
     display: inline-flex;
     padding: 20px 80px;
     border-radius: 50px;
@@ -79,6 +79,21 @@ h1 {
     position: absolute;
     left: 50%;     
     bottom: 120px;   
+    transform: translateX(-50%); 
+    color: #363C35;
+}
+
+.löschen {
+    display: inline-flex;
+    padding: 20px 80px;
+    border-radius: 50px;
+    background: #D1DED2;
+    border-style: none;
+    font-family: "rale";
+    font-size: 60px;
+    position: absolute;
+    left: 50%;     
+    bottom: 280px;   
     transform: translateX(-50%); 
     color: #363C35;
 }
