@@ -24,13 +24,7 @@ async function insertPerson() {
       }
     ]);
     
-    if (data) {
-      console.log('Eintrag wurde erfolgreich erstellt', data);
-      // Hier können Sie den Benutzer auf eine Erfolgsseite umleiten oder eine Erfolgsmeldung anzeigen.
-    } else {
-      console.log('Fehler aufgetreten', error);
-      // Hier können Sie den Benutzer auf eine Fehlerseite umleiten oder eine Fehlermeldung anzeigen.
-    }
+    uploadPhoto();
 }
 
 
@@ -68,3 +62,37 @@ async function insertPerson() {
 }*/
 
 /*--------------------------ENTSCHEIDUNG NUTZER ODER ANBIETER UND ABLAUFDATUM ENDE----------------------------*/
+
+
+
+async function uploadPhoto() {
+    const fileInput = document.getElementById('photoInput');
+    
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const filePath = `uploads/${file.name}`;
+        
+        const { error: uploadError } = await supa.storage.from('bilder').upload(filePath, file);
+        
+        if (uploadError) {
+            console.error('Fehler beim Hochladen der Datei:', uploadError);
+            return;
+        }
+        
+        const { data, error } = await supa.from('Bilder').insert([
+            { url: filePath }
+        ]);
+        
+        if (error) {
+            console.error('Fehler beim Speichern in der Bilder-Tabelle:', error);
+        } else {
+            console.log('Erfolgreich hochgeladen und gespeichert:', data);
+            alert('Foto erfolgreich hochgeladen!');
+        }
+    } else {
+        console.log('Keine Datei ausgewählt.');
+    }
+}
+
+
+
