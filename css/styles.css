@@ -41,7 +41,17 @@ h1 {
     color:#EAEAEA;
     display: flex;
     margin: 250px auto;
+}
 
+p {
+    font-family: "Raleway-Regular";
+    font-size: 60px;
+    text-align: center;
+    color:#EAEAEA;
+    display: flex;
+    margin: 250px auto;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 #Logo {
@@ -68,7 +78,7 @@ h1 {
     margin-top: 1000px;
 }
 
-.weiterbutton, .registrieren, .erneuern, .löschen {
+.weiterbutton, .registrieren, .erneuern, .löschen, .zurück, .falsch {
     display: inline-flex;
     padding: 20px 80px;
     border-radius: 50px;
@@ -83,7 +93,7 @@ h1 {
     color: #363C35;
 }
 
-.löschen {
+.löschen, .falsch {
     display: inline-flex;
     padding: 20px 80px;
     border-radius: 50px;
