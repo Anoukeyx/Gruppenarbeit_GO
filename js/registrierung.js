@@ -8,10 +8,12 @@ async function insertPerson() {
     const last_name = document.querySelector('#last_name').value;
     const birth_date = document.querySelector('#birth_date').value;
     const telefon = document.querySelector('#telefon').value;
+    const email = document.querySelector('#email').value;
 
     // Setzen Sie die Rolle_id auf "Nutzer"
     const rolle_id = "Nutzer";
     const regTime = new Date();
+
 
     const { data, error } = await supa.from("Person").insert([
       {
@@ -19,12 +21,25 @@ async function insertPerson() {
         nachname: last_name, 
         geburtstag: birth_date, 
         telefon: telefon,
+        email: email,
         Rolle_id: rolle_id,  // Rolle_id wird auf "Nutzer" gesetzt
         regtime: regTime
       }
     ]);
     
+<<<<<<< HEAD
     uploadPhoto();
+=======
+    if (data) {
+      console.log('Eintrag wurde erfolgreich erstellt', data);
+      // Hier können Sie den Benutzer auf eine Erfolgsseite umleiten oder eine Erfolgsmeldung anzeigen.
+    } else {
+      console.log('Fehler aufgetreten', error);
+      // Hier können Sie den Benutzer auf eine Fehlerseite umleiten oder eine Fehlermeldung anzeigen.
+    }
+
+  
+>>>>>>> ab2b5e8570cb289ccc9c73d3b89f8be756eee9fe
 }
 
 
