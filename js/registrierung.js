@@ -27,19 +27,7 @@ async function insertPerson() {
       }
     ]);
     
-<<<<<<< HEAD
     uploadPhoto();
-=======
-    if (data) {
-      console.log('Eintrag wurde erfolgreich erstellt', data);
-      // Hier können Sie den Benutzer auf eine Erfolgsseite umleiten oder eine Erfolgsmeldung anzeigen.
-    } else {
-      console.log('Fehler aufgetreten', error);
-      // Hier können Sie den Benutzer auf eine Fehlerseite umleiten oder eine Fehlermeldung anzeigen.
-    }
-
-  
->>>>>>> ab2b5e8570cb289ccc9c73d3b89f8be756eee9fe
 }
 
 
