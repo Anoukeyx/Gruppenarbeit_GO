@@ -78,7 +78,7 @@ p {
     margin-top: 1000px;
 }
 
-.weiterbutton, .registrieren, .erneuern, .löschen, .zurück, .falsch {
+.weiterbutton, .registrieren, .erneuern, .löschen, .zurück, .falsch, .FAQ {
     display: inline-flex;
     padding: 20px 80px;
     border-radius: 50px;
@@ -104,6 +104,21 @@ p {
     position: absolute;
     left: 50%;     
     bottom: 280px;   
+    transform: translateX(-50%); 
+    color: #363C35;
+}
+
+.FAQ{
+    display: inline-flex;
+    padding: 20px 80px;
+    border-radius: 50px;
+    background: #D1DED2;
+    border-style: none;
+    font-family: "rale";
+    font-size: 60px;
+    position: absolute;
+    left: 50%;     
+    bottom: 1200px;   
     transform: translateX(-50%); 
     color: #363C35;
 }
