@@ -86,7 +86,7 @@ async function uploadPhoto() {
             return;
         }
         
-        const { data, error } = await supa.from('Bilder').insert([
+        const { data, error } = await supa.from('Bilder').insert([ 
             { url: filePath }
         ]);
         
