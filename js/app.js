@@ -1,3 +1,5 @@
+import { supa } from "../supabase.js";
+
 function generateQRCode() {
     let url = window.location.href;
     let qrcodePlace = document.getElementById("qrcode");
