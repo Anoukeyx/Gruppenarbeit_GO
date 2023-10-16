@@ -93,19 +93,8 @@ p {
     color: #363C35;
 }
 
-.löschen, .falsch {
-    display: inline-flex;
-    padding: 20px 80px;
-    border-radius: 50px;
-    background: #D1DED2;
-    border-style: none;
-    font-family: "rale";
-    font-size: 60px;
-    position: absolute;
-    left: 50%;     
+.löschen, .falsch { 
     bottom: 280px;   
-    transform: translateX(-50%); 
-    color: #363C35;
 }
 
 .FAQ{
