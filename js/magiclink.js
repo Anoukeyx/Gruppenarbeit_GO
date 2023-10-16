@@ -37,11 +37,21 @@ document.getElementById('submit').addEventListener('click', sendMagicLink);
 
 // Listener, für Änderungen des Auth Status
 // UserStatus wird aktualisiert, wenn sich der Auth Status ändert
-supa.auth.onAuthStateChange((event, session) => {
+supa.auth.onAuthStateChange(async (event, session) => {
   if (event === "SIGNED_IN") {
       console.log("User signed in: ", session.user);
       updateUserStatus(session.user);
       checkDBUser(session);
+
+      // id von user in personentabelle schreiben in column, dafür funktion machen
+      const { data, error } = await supabase
+.from('Person')
+.insert([
+  { some_column: 'user_id', other_column: 'otherValue' },
+])
+.select()
+
+      // userId = super.auth.user().id
 
   } else if (event === "SIGNED_OUT") {
       console.log("User signed out");
