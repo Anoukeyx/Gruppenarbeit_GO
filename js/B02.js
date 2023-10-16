@@ -1,37 +1,11 @@
 import { supa } from "../supabase.js";
 
-async function loadFirstName(session) {
-    const { data, error } = await supabase.from('Person').select('vorname').eq('email', session.user.email);
-
-    if (error) {
-        console.error(error);
-        return;
-    }
-
-    if (data.length > 0) {
-        const firstName = data[0].vorname;
-        document.getElementById('userName').textContent = firstName; // Aktualisieren Sie das 'userName'-Element mit dem Vor- und Nachnamen
-    }
-}
-
-
-/*supa.auth.onAuthStateChange((event, session) => {
-    if (event === "SIGNED_IN") {
-        console.log("User signed in: ", session.user);
-        updateUserStatus(session.user);
-        loadFirstName(session); // Lade den Vornamen, wenn der Benutzer angemeldet ist
-    } else if (event === "SIGNED_OUT") {
-        console.log("User signed out");
-        updateUserStatus(null);
-    }
-});*/
 
 
 
 
-
-const initialUser = supa.auth.user();
-console.log(initialUser)
+/*const initialUser = supa.auth.user();
+console.log(initialUser)*/
 
 
 function generateQRCode() {
@@ -66,3 +40,6 @@ function generateQRCode() {
 
 // Listener auf dem Button
 document.getElementById("generateQR").addEventListener("click", generateQRCode);
+
+
+

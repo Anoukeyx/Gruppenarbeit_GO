@@ -7,6 +7,7 @@ console.log(window.location.origin);
 // Funktion, um Magic Link zu senden
 async function sendMagicLink() {
     const email = document.getElementById('emailInput').value;
+    checkDBUser(email)
     const { error } = await supa.auth.signIn({ email });
     
     if (error) {
@@ -43,16 +44,6 @@ supa.auth.onAuthStateChange(async (event, session) => {
       updateUserStatus(session.user);
       checkDBUser(session);
 
-      // id von user in personentabelle schreiben in column, dafür funktion machen
-      const { data, error } = await supabase
-.from('Person')
-.insert([
-  { some_column: 'user_id', other_column: 'otherValue' },
-])
-.select()
-
-      // userId = super.auth.user().id
-
   } else if (event === "SIGNED_OUT") {
       console.log("User signed out");
       updateUserStatus(null);
@@ -74,8 +65,8 @@ document.getElementById('logoutButton').addEventListener('click', logout);
 
 
 async function checkDBUser(session) {
-
-    const { data, error } = await supa.from('Person').select('vorname').eq('email', session.user.email);
+console.log(session);
+    const { data, error } = await supa.from('Person').select('vorname').eq('email', session);
 
     console.log(data)
 
