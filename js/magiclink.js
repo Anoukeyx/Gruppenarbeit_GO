@@ -18,6 +18,11 @@ async function sendMagicLink() {
     }
 }
 
+// Sitzungsinformationen in Local Storage speichern
+const session = supa.auth.session();
+localStorage.setItem('supabaseSession', JSON.stringify(session));
+
+
 // Funktion, um User Status zu aktualisieren
 function updateUserStatus(user) {
   const userStatusElement = document.getElementById('userStatus');
@@ -80,8 +85,6 @@ console.log(session);
 
 }
 
-// Sitzungsinformationen in Local Storage speichern
-const session = supa.auth.session();
-localStorage.setItem('supabaseSession', JSON.stringify(session));
+
 
 

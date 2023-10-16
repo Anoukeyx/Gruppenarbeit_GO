@@ -100,20 +100,6 @@ async function uploadPhoto() {
     }
 }
 
-// Verwenden Sie die erstellte Beziehung, um Personen mit ihren Bildern abzurufen
-const { data, error } = await supabase
-    .from('Person')
-    .select('*, Bilder(*)') // 'images(*)' verwendet die Beziehung
-    .eq('id', personId); // Hier sollten Sie die gewünschte Person identifizieren
-
-if (error) {
-    console.error('Fehler beim Abrufen der Daten:', error);
-} else {
-    // 'data' enthält die Personendaten, einschließlich ihrer Bilder
-    const person = data[0];
-    console.log(person);
-}
-
 
 
 
