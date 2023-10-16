@@ -42,4 +42,24 @@ function generateQRCode() {
 document.getElementById("generateQR").addEventListener("click", generateQRCode);
 
 
+// Sitzungsinformationen aus Local Storage wiederherstellen
+const sessionData = localStorage.getItem('supabaseSession');
+if (sessionData) {
+    const session = JSON.parse(sessionData);
+
+    // Die Sitzung wiederherstellen
+    supa.auth.session = session;
+
+    // Überprüfen, ob der Benutzer eingeloggt ist
+    if (session.user) {
+        // Der Benutzer ist eingeloggt
+    } else {
+        // Der Benutzer ist nicht eingeloggt
+    }
+} else {
+    // Keine Sitzungsinformationen gefunden, der Benutzer ist nicht eingeloggt
+}
+
+
+
 

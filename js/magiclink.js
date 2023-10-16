@@ -79,5 +79,9 @@ console.log(session);
     }
 
 }
-  
+
+// Sitzungsinformationen in Local Storage speichern
+const session = supa.auth.session();
+localStorage.setItem('supabaseSession', JSON.stringify(session));
+
 
