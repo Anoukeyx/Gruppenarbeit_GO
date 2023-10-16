@@ -2,7 +2,8 @@ import { supa } from "../supabase.js";
 
 const btn = document.querySelector('#registrieren');
 btn.addEventListener('click', insertPerson);
-
+const userID = supa.auth.user();
+    console.log(userID);
 async function insertPerson() {
     const first_name = document.querySelector('#first_name').value;
     const last_name = document.querySelector('#last_name').value;
@@ -13,6 +14,8 @@ async function insertPerson() {
     // Setzen Sie die Rolle_id auf "Nutzer"
     const rolle_id = "Nutzer";
     const regTime = new Date();
+    const userID = supa.auth.user().id;
+    
 
 
     const { data, error } = await supa.from("Person").insert([
@@ -23,7 +26,8 @@ async function insertPerson() {
         telefon: telefon,
         email: email,
         Rolle_id: rolle_id,  // Rolle_id wird auf "Nutzer" gesetzt
-        regtime: regTime
+        regtime: regTime,
+        user_id: userID
       }
     ]);
     
