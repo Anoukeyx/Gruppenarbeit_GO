@@ -1,7 +1,8 @@
-SELECT Person.*, Bild.*
-FROM Person
-JOIN Bild ON person.bild_id = bild.id;
+SELECT p.*, b.*
+FROM "Person" p
+JOIN "Bilder" b ON p.bilder_id = b.id_bild;
 
-SELECT person.name, bild.image_url, bild.description
+
+/*SELECT person.vorname, bild.image_url, bild.description
 FROM person
-JOIN bild ON person.bild_id = bild.id;
+JOIN bild ON person.bild_id = bild.id;*/
