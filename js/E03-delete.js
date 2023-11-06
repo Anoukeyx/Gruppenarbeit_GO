@@ -7,7 +7,7 @@ btn.addEventListener('click', deleteFunktion);
 const deletePerson = email.value;
 const deleteusers = "uuid";
 
-async function deleteFunktion () 
+async function deleteFunktion () {}
 
 const { data, error } = await supa
   .from('Person')

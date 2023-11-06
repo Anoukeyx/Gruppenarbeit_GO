@@ -30,7 +30,7 @@ async function insertPerson() {
     ]);
     if(!error) {
       uploadPhoto();
-      window.location.pathname="../hmtl/B02.html"
+      window.location.pathname="../html/B02.html"
     }
 }
 
