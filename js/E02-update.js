@@ -1,3 +1,8 @@
+import { supa } from "../supabase.js";
+
+const btn = document.querySelector('#erneuern');
+btn.addEventListener('click', updatePerson);
+
 
 const Person = supabase.channel('custom-update-channel')
   .on(
