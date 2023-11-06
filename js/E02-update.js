@@ -19,6 +19,6 @@ const { data, error } = await supabase
     telefon: telefon,
     email: email,
     })
-  .eq( "id", 1)
+  .eq( "id", 40)
   .select() 
 }
