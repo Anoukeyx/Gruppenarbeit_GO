@@ -3,13 +3,16 @@ import { supa } from "../supabase.js";
 const btn = document.querySelector('#loeschen');
 btn.addEventListener('click', deleteFunktion);
 
+
 const deletePerson = email.value;
 const deleteusers = "uuid";
 
-const { error } = await supabase
+async function deleteFunktion () 
+
+const { data, error } = await supa
   .from('Person')
   .delete()
-  .eq('email', email);
+  .eq('sina.schroeder1311@gmail.com', email);
 
  deletePerson();
 
