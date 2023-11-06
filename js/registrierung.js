@@ -17,6 +17,8 @@ async function insertPerson() {
     
 
 
+    // TODO: ändere user_id im insert statement zur userid des eingeloggten users
+
     const { data, error } = await supa.from("Person").insert([
       {
         vorname: first_name, 
@@ -24,6 +26,7 @@ async function insertPerson() {
         geburtstag: birth_date, 
         telefon: telefon,
         email: email,
+        user_id: '',
         Rolle_id: rolle_id,  // Rolle_id wird auf "Nutzer" gesetzt
         regtime: regTime,
       }

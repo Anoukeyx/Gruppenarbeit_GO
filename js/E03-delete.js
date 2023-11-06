@@ -1,46 +1,31 @@
-import { supa } from "../supabase.js";
+import { supa, supaAdmin } from "../supabase.js";
 
 const btn = document.querySelector('#loeschen');
-btn.addEventListener('click', deleteFunktion);
+btn.addEventListener('click', deleteUser);
 
 
-const deletePerson = email.value;
-const deleteusers = "uuid";
+// TODO: ersetze userID durch id des eingeloggten Users
+// const userId = await supa.auth.getUser()
+// console.log(userId)
+const userId = 'a1640389-e414-4c89-a7b0-b80049e27012'
 
-async function deleteFunktion () {}
+async function deleteUser () {
+    // lösche die daten des users mit der user id 'userId' aus der Tabelle Person
+    const { error } = await supa
+        .from('Person')
+        .delete()
+        .eq('user_id', userId)
+    
+    if (error) console.error(error)
 
-const { data, error } = await supa
-  .from('Person')
-  .delete()
-  .eq('sina.schroeder1311@gmail.com', email);
+    // Lösche den Account mit dem supabase admin client
+    const { data, error: err } = await supaAdmin.auth.admin.deleteUser(
+        userId
+    )
 
- deletePerson();
+    if (err) console.error(err)
 
- deleteusers();
-
- deleteFunktion(deletePerson, deleteusers)
-
-
-
-
-
-async function deletePersonByEmail(email) {
-    try {
-        // Versuchen, die Person anhand ihrer E-Mail-Adresse aus der Datenbank zu löschen
-        const { data, error } = await supabase.from("Person").delete().eq("email", email);
-
-        if (error) {
-            // Bei einem Fehler die Fehlermeldung ausgeben
-            console.error("Fehler beim Löschen der Person:", error.message);
-        } else {
-            // Erfolgreich gelöscht
-            console.log("Person erfolgreich gelöscht.");
-        }
-    } catch (error) {
-        console.error("Ein unerwarteter Fehler ist aufgetreten:", error);
+    if (!err && !error) {
+        window.location.pathname="../index.html"
     }
 }
-
-// Verwenden Sie die Funktion, um eine Person anhand ihrer E-Mail-Adresse zu löschen
-const emailToDelete = "beispiel@email.com"; // Hier ersetzen Sie "beispiel@email.com" durch die tatsächliche E-Mail-Adresse der zu löschenden Person
-deletePersonByEmail(emailToDelete);
