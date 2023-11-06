@@ -1,18 +1,20 @@
 import { supa } from "../supabase.js";
-let first_name = document.querySelector('#first_name');
-let last_name = document.querySelector('#last_name');
-let birth_date = document.querySelector('#birth_date');
-let telefon = document.querySelector('#telefon');
-let email = document.querySelector('#email');
 
 const btn = document.querySelector('#erneuern');
 btn.addEventListener('click', updatePerson);
 
-async function getPersonDetails() {
-  // const userId =  await supa.auth.getUser()
 
-  // ersetze userID durch id des eingeloggten Users
-  const userId = 'a1640389-e414-4c89-a7b0-b80049e27012'
+// const userId =  await supa.auth.getUser()
+
+// TODO: ersetze userID durch id des eingeloggten Users
+const userId = 'a1640389-e414-4c89-a7b0-b80049e27012'
+
+async function getPersonDetails() {
+  let first_name = document.querySelector('#first_name');
+  let last_name = document.querySelector('#last_name');
+  let birth_date = document.querySelector('#birth_date');
+  let telefon = document.querySelector('#telefon');
+  let email = document.querySelector('#email');
   const { data, error} = await supa
     .from('Person')
     .select()
@@ -32,18 +34,25 @@ async function getPersonDetails() {
 
 
 async function updatePerson() {
+  let first_name = document.querySelector('#first_name');
+  let last_name = document.querySelector('#last_name');
+  let birth_date = document.querySelector('#birth_date');
+  let telefon = document.querySelector('#telefon');
+  let email = document.querySelector('#email');
   
-  const { data, error } = await supa
+  const { error } = await supa
   .from('Person')
-  .update({ vorname: first_name, 
-    nachname: last_name, 
-    geburtstag: birth_date, 
-    telefon: telefon,
-    email: email,
+  .update({ 
+    vorname: first_name.value, 
+    nachname: last_name.value, 
+    geburtstag: birth_date.value, 
+    telefon: telefon.value,
+    email: email.value,
   })
-  .eq( "id", 40)
-  .select() 
-}
+  .eq('user_id', userId)
+
+  if (error) console.error(error)
+} 
 // wenn seite geladen wird, hole alle Daten der eingeloggten Person und zeige sie in den Input Fields
 document.addEventListener('DOMContentLoaded', async () =>
   await getPersonDetails()
