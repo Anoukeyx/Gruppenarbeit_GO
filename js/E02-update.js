@@ -13,3 +13,12 @@ const Person = supabase.channel('custom-update-channel')
     }
   )
   .subscribe()
+
+
+
+
+
+//   if(!error) {
+//     uploadPhoto();
+//     window.location.pathname="../html/B02.html"
+//   }

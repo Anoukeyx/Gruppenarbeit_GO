@@ -28,8 +28,10 @@ async function insertPerson() {
         regtime: regTime,
       }
     ]);
-    
-    uploadPhoto();
+    if(!error) {
+      uploadPhoto();
+      window.location.pathname="../hl/B02.html"
+    }
 }
 
 
