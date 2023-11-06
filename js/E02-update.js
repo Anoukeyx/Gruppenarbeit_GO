@@ -4,17 +4,20 @@ const btn = document.querySelector('#erneuern');
 btn.addEventListener('click', updatePerson);
 
 
-// const userId =  await supa.auth.getUser()
+// const user =  await supa.auth.getUser()
 
 // TODO: ersetze userID durch id des eingeloggten Users
 const userId = 'a1640389-e414-4c89-a7b0-b80049e27012'
 
 async function getPersonDetails() {
-  let first_name = document.querySelector('#first_name');
-  let last_name = document.querySelector('#last_name');
-  let birth_date = document.querySelector('#birth_date');
-  let telefon = document.querySelector('#telefon');
-  let email = document.querySelector('#email');
+  // hole die aktuellen werte der input fields
+  let first_name = document.querySelector('#first_name').value;
+  let last_name = document.querySelector('#last_name').value;
+  let birth_date = document.querySelector('#birth_date').value;
+  let telefon = document.querySelector('#telefon').value;
+  let email = document.querySelector('#email').value;
+
+  // hole den user aus der datenbank
   const { data, error} = await supa
     .from('Person')
     .select()
@@ -22,11 +25,12 @@ async function getPersonDetails() {
     .single()
 
     if (!error) {
-      first_name.value = data.vorname
-      last_name.value = data.nachname
-      birth_date.value = data.geburtstag
-      telefon.value = data.telefon
-      email.value = data.email
+      // die daten aus der datenbank in den input fields anzeigen lassen.
+      first_name = data.vorname
+      last_name = data.nachname
+      birth_date = data.geburtstag
+      telefon = data.telefon
+      email = data.email
     } else {
       console.error(error)
     }
@@ -34,20 +38,23 @@ async function getPersonDetails() {
 
 
 async function updatePerson() {
-  let first_name = document.querySelector('#first_name');
-  let last_name = document.querySelector('#last_name');
-  let birth_date = document.querySelector('#birth_date');
-  let telefon = document.querySelector('#telefon');
-  let email = document.querySelector('#email');
-  
+  // hole die aktuellen werte der input fields
+  let first_name = document.querySelector('#first_name').value;
+  let last_name = document.querySelector('#last_name').value;
+  let birth_date = document.querySelector('#birth_date').value;
+  let telefon = document.querySelector('#telefon').value;
+  let email = document.querySelector('#email').value;
+
+
+  // update die neuen werte aus den input fields in die db
   const { error } = await supa
   .from('Person')
   .update({ 
-    vorname: first_name.value, 
-    nachname: last_name.value, 
-    geburtstag: birth_date.value, 
-    telefon: telefon.value,
-    email: email.value,
+    vorname: first_name, 
+    nachname: last_name, 
+    geburtstag: birth_date, 
+    telefon: telefon,
+    email: email,
   })
   .eq('user_id', userId)
 
