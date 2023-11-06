@@ -4,15 +4,15 @@ import { supa } from "../supabase.js";
 
 
 
-/*const initialUser = supa.auth.user();
-console.log(initialUser)*/
+const initialUser = supa.auth.user();
+console.log(initialUser)
 
 
 function generateQRCode() {
     let url = window.location.href;
     let qrcodePlace = document.getElementById("qrcode");
     qrcodePlace.innerHTML = "";
-    //const id = document.getElementById("id").value; // Hier muss die gewünschte ID aus der Datenbank eingefügt werden
+    const id = document.getElementById("id").value; // Hier muss die gewünschte ID aus der Datenbank eingefügt werden
     const id= supa.auth.user().id;
   let urlMitID =  window.location.hostname +`/html/B03.html?id=${id}`; 
     
@@ -64,5 +64,5 @@ if (sessionData) {
 
 
 
-
+//link loom video https://www.loom.com/share/cff7662e658e4d0591ec25ad5fce5dca?sid=47a5839a-d835-42ec-b249-80f9c653f0bf 
 
