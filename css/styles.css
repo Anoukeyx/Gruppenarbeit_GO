@@ -43,16 +43,36 @@ h1 {
     margin: 250px auto;
 }
 
-p {
-    font-family: "Raleway-Regular";
+p , h2{
+    font-family: "rale";
     font-size: 60px;
     text-align: center;
     color:#EAEAEA;
     display: flex;
-    margin: 250px auto;
     padding-left: 80px;
     padding-right: 80px;
 }
+
+p{
+    margin: 250px auto;
+}
+
+#haken {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+}
+
+#haken img {
+    max-width: 500px; 
+    
+}
+
 
 #Logo {
     width: 600px;     
@@ -126,11 +146,12 @@ p {
 
 .wrapper_benutzerdaten {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
-    grid-template-rows: repeat(3, 1fr);    /* 3 Reihen */
-    gap: 20px; /* Abstand zwischen den Items */
-    max-width: 100%; /* Breite auf volle verfügbare Breite setzen */
-    margin: 0 auto; /* Zentrieren */
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(3, 1fr);    
+    gap: 20px; 
+    max-width: calc(100% - 40px); 
+    margin: 20px auto; 
+    padding: 0 40px; 
 }
 
 
@@ -150,57 +171,45 @@ p {
 
     .benutzerdaten {
         padding: 70px 70px 70px 20px;
-    }
-    
-/*_______________________Benutzerdaten ENDE______________________________________________*/
-    
-/* QR Code styling */
+    }  
 
-
-/*body, h1, p, select, button, div {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+table {
+    width: 80%; 
+    border-collapse: collapse; 
+    text-align: left; 
+    background-color: #a1ada3; 
+    font-family: "rale";
+    font-size: 40px;
+    color:#EAEAEA;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 20px;
+td {
+    padding: 50px; 
+    border: 3px solid #ddd; 
 }
 
-h1 {
-    margin-bottom: 10px;
+/* Gemeinsame Stile für alle Buttons */
+#logoutButton, #generateQR {
+    padding: 50px; /* Innenabstand */
+    font-family: "rale";
+    font-size: 50px; 
+    color: #EAEAEA;
+    background-color: #a1ada3; /* Hintergrundfarbe */
+    border: none; /* Keine Ränder */
+    border-radius: 10px; /* Abgerundete Ecken */
+    outline: none; 
+    margin: 30px; /* Etwas Abstand zwischen den Buttons */
+    width: 500px; /* Feste Breite für beide Buttons */
+    display: block; /* Damit der Button die Breite des Elternelements einnimmt */
+    box-sizing: border-box; /* Damit die Breite einschließlich Padding und Border berechnet wird */
+    text-align: center; /* Text in den Buttons zentrieren */
 }
 
-p {
-    margin-bottom: 20px;
+#logoutButton {
+    margin-top: 250px;
 }
 
-select {
-    width: 60px;
-    padding: 5px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+#generateQR {
+    margin-bottom: 0px;
 }
 
-button {
-    background-color: #008CBA;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #005f5f;
-}
-
-#app {
-    margin-top: 20px;
-}*/
