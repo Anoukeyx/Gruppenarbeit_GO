@@ -33,7 +33,6 @@ async function insertPerson() {
           regtime: regTime,
         }
       ]);
-    console.log(data)
     if(!error) {
       uploadPhoto();
       window.location.pathname="../html/B02.html"
