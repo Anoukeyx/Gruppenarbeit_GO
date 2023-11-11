@@ -19,18 +19,21 @@ async function insertPerson() {
 
     // TODO: ändere user_id im insert statement zur userid des eingeloggten users
 
-    const { data, error } = await supa.from("Person").insert([
-      {
-        vorname: first_name, 
-        nachname: last_name, 
-        geburtstag: birth_date, 
-        telefon: telefon,
-        email: email,
-        user_id: '',
-        Rolle_id: rolle_id,  // Rolle_id wird auf "Nutzer" gesetzt
-        regtime: regTime,
-      }
-    ]);
+    const { data, error } = await supa
+      .from("Person")
+      .insert([
+        {
+          vorname: first_name, 
+          nachname: last_name, 
+          geburtstag: birth_date, 
+          telefon: telefon,
+          email: email,
+          // user_id: '', 
+          Rolle_id: rolle_id,  // Rolle_id wird auf "Nutzer" gesetzt
+          regtime: regTime,
+        }
+      ]);
+    console.log(data)
     if(!error) {
       uploadPhoto();
       window.location.pathname="../html/B02.html"
